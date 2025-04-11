@@ -53,3 +53,30 @@ class Dog : public Animal
     }
 
 };
+
+// Derived class: cat
+class Cat : public Animal
+{
+  private:
+    // Additional attribute specific to cat
+    string color_;
+
+  public:
+    // constructor
+    Cat (string name, string color) : Animal(name,"mewo"), color_(color) {}
+    
+    // New method specific to the cat class
+    void purr() const
+    {
+         cout << name_ << " : " << "make purr" << endl;
+
+    }
+
+    // method to display info about the cat
+    void displayinfo() const
+    {
+         Animal::displayinfo(); //  call the base class's displayinfo() method
+         cout << "color : " << color_ << endl;
+    }
+   
+};
